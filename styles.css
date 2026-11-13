@@ -36,3 +36,16 @@ img,canvas,video{max-width:100%}
 :focus-visible{outline:2px solid var(--cyan);outline-offset:3px}
 @media(max-width:760px){.topbar{height:auto;min-height:68px;flex-wrap:wrap;padding:12px 4%;gap:12px}.top-nav{order:3;width:100%;overflow-x:auto;gap:20px}.top-nav a{white-space:nowrap;padding:10px 0}.hero-strip{margin:18px 3%;padding:24px 5%}.app-shell{width:100%;overflow-x:hidden}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation-duration:.01ms!important;transition-duration:.01ms!important}}
+
+
+/* ULTIMA Ω quality layer — visual hierarchy, responsive surfaces, accessibility */
+:root{color-scheme:dark;--u-surface:rgba(18,25,38,.78);--u-border:rgba(164,210,220,.18);--u-glow:rgba(111,220,224,.16)}
+body{font-feature-settings:"ss01" on; text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased}
+.app-sidebar,.panel,.card,.modal,.tech-reader,.tech-chapter-list article{border-color:var(--u-border)}
+.panel,.card,.tech-reader{backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
+button,.button,a.button{min-height:40px}
+button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid #9ce7e7;outline-offset:3px}
+img{height:auto}
+@media(min-width:1200px){.app-shell{max-width:1680px;margin-inline:auto}.hero-strip{border:1px solid var(--u-border);box-shadow:0 24px 80px rgba(0,0,0,.24)}}
+@media(max-width:760px){.app-sidebar{z-index:50}.main-content,.main{min-width:0}.grid,.cards,.tech-grid{grid-template-columns:minmax(0,1fr)!important}.hero-strip{border-radius:18px}.tech-reader{overflow-wrap:anywhere}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto!important}*,*:before,*:after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
