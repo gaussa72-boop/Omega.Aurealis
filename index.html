@@ -13,7 +13,7 @@
   <div class="app-shell">
     <header class="topbar">
       <a class="brand" href="#"><span class="brand-mark">Ω</span><span>ASTRALIS<span class="brand-light"> Ω</span><small>GALACTIC CIVILIZATION ENGINE</small></span></a>
-      <nav class="top-nav"><a class="active" href="#explore">Universum</a><a href="#worlds">Welten</a><a href="#economy">Wirtschaft</a><a href="#mission">Missionen</a></nav>
+      <nav class="top-nav"><a class="active" href="#explore">Universum</a><a href="#worlds">Welten</a><a href="#economy">Wirtschaft</a><a href="#mission">Missionen</a><a href="#galactic-politics">Imperien & Krieg</a></nav>
       <div class="top-actions"><span class="live-dot"></span><span class="status-text">SYSTEM ONLINE</span><button class="wallet-pill" id="walletTop">◈ <b id="topCredits">2,500</b> AC</button><button class="avatar">AG</button></div>
     </header>
     <main>
@@ -55,10 +55,45 @@
         <article class="panel economy-panel"><div class="panel-head"><div><div class="eyebrow">YOUR CIVILIZATION</div><h2>Deine Weltenwirtschaft</h2></div><span class="status-chip">SIMULATION</span></div><div class="economy-cards"><div class="economy-card balance"><small>VERFÜGBARE CREDITS</small><strong id="balance">2,500 <i>AC</i></strong><span>Virtuelles Startguthaben</span></div><div class="economy-card"><small>INVESTIERT</small><strong id="invested">0 <i>AC</i></strong><span>In Weltprojekte zugewiesen</span></div><div class="economy-card"><small>AKTIVE WELTEN</small><strong id="activeWorlds">0</strong><span>Mit Entwicklungspunkten</span></div><div class="economy-card"><small>FORSCHUNGSSTUFE</small><strong id="researchLevel">01</strong><span>Foundations</span></div></div><div class="transaction-head"><h3>Letzte Zuweisungen</h3><span>LOKALE DEMO-DATEN</span></div><div id="transactions" class="transactions"><div class="empty-state">Noch keine Credits zugewiesen. Wähle eine Welt in der Sternenkarte.</div></div></article>
         <article class="panel mission-panel" id="mission"><div class="eyebrow">NEXT FRONTIER</div><h2>Baue eine neue Welt.</h2><p>Jede Zuweisung unterstützt den virtuellen Ausbau einer Zivilisation. Erforsche Technologien, entwickle Habitate und erschließe neue Systeme.</p><div class="mission-steps"><div class="mission-step done"><span>01</span><div><b>Erste Welt auswählen</b><small>Wähle ein Ziel im Sternenatlas</small></div><i>✓</i></div><div class="mission-step"><span>02</span><div><b>Forschung finanzieren</b><small>Weise deine ersten Credits zu</small></div><i>◇</i></div><div class="mission-step"><span>03</span><div><b>Terraforming freischalten</b><small>Erreiche 1.000 Entwicklungspunkte</small></div><i>◇</i></div></div><button class="outline-button full" id="missionExplore">WELTEN ERKUNDEN ↗</button></article>
       </section>
+
+      <section class="galactic-politics" id="galactic-politics">
+        <div class="politics-heading"><div><div class="eyebrow">GALACTIC POWER & DIPLOMACY</div><h2>Imperien. Allianzen. Galaktische Konflikte.</h2><p>Gründe ein Sternenreich, schließe Bündnisse und führe strategische Konflikte um fiktive Systeme – als rundenbasierte Spielsimulation.</p></div><span class="status-chip">STRATEGY SIMULATION</span></div>
+        <div class="politics-grid">
+          <article class="panel politics-card">
+            <div class="eyebrow">01 / YOUR EMPIRE</div><h3>Eigenes Imperium gründen</h3>
+            <label class="field-label" for="empireName">Name des Imperiums</label><input id="empireName" maxlength="32" placeholder="z. B. Aurealis Sternenbund">
+            <label class="field-label" for="empireDoctrine">Regierungsform</label><select id="empireDoctrine"><option>Föderation</option><option>Republik</option><option>Imperium</option><option>Wissenschaftlicher Rat</option><option>Handelsliga</option></select>
+            <button class="primary-button full" id="createEmpire">✦ Imperium gründen</button>
+            <div class="empire-summary" id="empireSummary"><b>Noch kein Imperium gegründet</b><small>Wähle einen Namen und beginne deine galaktische Geschichte.</small></div>
+          </article>
+          <article class="panel politics-card">
+            <div class="eyebrow">02 / DIPLOMACY</div><h3>Allianzen & Beziehungen</h3>
+            <label class="field-label" for="allianceName">Name deiner Allianz</label><input id="allianceName" maxlength="32" placeholder="z. B. Orionpakt">
+            <button class="outline-button full" id="createAlliance">＋ Allianz gründen</button>
+            <div class="alliance-list" id="allianceList"><div class="empty-state">Noch keine Allianzen gegründet.</div></div>
+            <p class="tiny-note">Allianzen sind Spielgruppen innerhalb dieser lokalen Demo. Einladungen und Online-Mitglieder benötigen später Accounts und einen Server.</p>
+          </article>
+          <article class="panel politics-card war-card">
+            <div class="eyebrow">03 / CONFLICT OPERATIONS</div><h3>Strategischen Konflikt starten</h3>
+            <p class="war-warning">Konflikte sind ausschließlich fiktive, rundenbasierte Spielereignisse. Keine realen Ziele oder Gewaltanleitungen.</p>
+            <label class="field-label" for="warTarget">Gegnerisches Imperium</label><select id="warTarget"><option value="">KI-Fraktion auswählen …</option><option value="Helios-Konsortium">Helios-Konsortium</option><option value="Nebula-Dominion">Nebula-Dominion</option><option value="Vega-Konföderation">Vega-Konföderation</option><option value="Andromeda-Liga">Andromeda-Liga</option></select>
+            <label class="field-label" for="warTheater">Konfliktgebiet</label><select id="warTheater"><option>Grenzsektor Orion</option><option>Cygnus-Handelsroute</option><option>Kepler-Frontier</option><option>Andromeda-Außenposten</option></select>
+            <label class="field-label" for="warStrategy">Strategie</label><select id="warStrategy"><option value="defense">Defensive Sicherung</option><option value="balanced">Ausgewogene Flotte</option><option value="science">Technologische Überlegenheit</option></select>
+            <button class="primary-button full" id="declareWar">⚑ Konflikt simulieren</button>
+            <small class="tiny-note">Die Simulation berechnet ein abstraktes Ergebnis aus Forschungsstufe, Strategie und Zufallsereignissen. Keine Credits werden ohne Bestätigung eingesetzt.</small>
+          </article>
+          <article class="panel politics-card">
+            <div class="eyebrow">04 / GALACTIC CHRONICLE</div><h3>Diplomatie & Ereignisse</h3>
+            <div id="warHistory" class="war-history"><div class="empty-state">Noch keine Konflikte oder diplomatischen Ereignisse.</div></div>
+            <button class="outline-button full" id="clearHistory">Chronik zurücksetzen</button>
+          </article>
+        </div>
+      </section>
       <footer><span>ASTRALIS Ω <small>GALACTIC CIVILIZATION ENGINE</small></span><span>Wissenschaftliche Referenzdaten · Virtuelle Simulation · Kein reales Eigentums- oder Anlageangebot</span><span>© 2026 ASTRALIS</span></footer>
     </main>
   </div>
   <div class="toast" id="toast"></div>
   <script type="module" src="./app.js"></script>
+  <script type="module" src="./empire.js"></script>
 </body>
 </html>
