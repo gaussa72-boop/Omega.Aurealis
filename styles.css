@@ -26,3 +26,13 @@ html{background:#212121}body{background:#212121;color:#ececec;font-family:Manrop
 .tech-research-metric{display:flex;flex-direction:column;gap:5px;min-width:0}.tech-research-metric small{font:8px 'DM Mono';letter-spacing:.1em;color:#899a98}.tech-research-metric b{font:20px 'DM Mono';color:var(--gold)}.tech-research-metric span{font-size:9px;color:#929d9b}.tech-research-action{border-left:1px solid #ffffff16;padding-left:16px;display:flex;align-items:center;justify-content:space-between;gap:12px}.tech-research-action p{font-size:10px;line-height:1.6;color:#aeb9b7;margin:0}.tech-research-action button{white-space:nowrap}.tech-index-item i{color:#90cdbd}.tech-research-action button:disabled{opacity:.42;cursor:not-allowed}
 @media(max-width:1050px){.tech-research-console{grid-template-columns:repeat(3,1fr)}.tech-research-action{grid-column:1/-1;border-left:0;border-top:1px solid #ffffff16;padding:12px 0 0}}
 @media(max-width:560px){.tech-research-console{grid-template-columns:1fr 1fr;padding:13px}.tech-research-action{grid-column:1/-1;align-items:stretch;flex-direction:column}.tech-research-action button{width:100%}.tech-research-metric b{font-size:16px}}
+
+
+/* Ultima performance polish */
+html{scroll-padding-top:86px}body{overflow-x:hidden}
+button,a{transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease}
+button:hover{transform:translateY(-1px)}
+img,canvas,video{max-width:100%}
+:focus-visible{outline:2px solid var(--cyan);outline-offset:3px}
+@media(max-width:760px){.topbar{height:auto;min-height:68px;flex-wrap:wrap;padding:12px 4%;gap:12px}.top-nav{order:3;width:100%;overflow-x:auto;gap:20px}.top-nav a{white-space:nowrap;padding:10px 0}.hero-strip{margin:18px 3%;padding:24px 5%}.app-shell{width:100%;overflow-x:hidden}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation-duration:.01ms!important;transition-duration:.01ms!important}}
