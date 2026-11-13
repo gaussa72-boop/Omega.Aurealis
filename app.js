@@ -66,3 +66,9 @@ async function loadExoplanets(){const btn=$('loadExoplanets');btn.disabled=true;
 $('loadExoplanets').addEventListener('click',loadExoplanets);
 window.addEventListener('beforeunload',()=>cancelAnimationFrame(animationFrame));
 renderList();renderEconomy();selectWorld(selected);setTimeout(loadExoplanets,900);try{initScene();}catch(e){console.error(e);$('loadingState').textContent='3D-Ansicht konnte nicht gestartet werden. Bitte WebGL aktivieren.';}
+
+// Synchronize the shared virtual wallet when research modules spend ASTRALIS Credits.
+window.addEventListener('astralis:wallet-updated', event => {
+ const next = Number(event.detail && event.detail.credits);
+ if (Number.isFinite(next) && next >= 0) { credits = next; save(); renderEconomy(); }
+});
