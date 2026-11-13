@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#070b18">
+  <meta name="description" content="ASTRALIS Ω — interaktive Welten, wissenschaftliche Planetendaten und eine virtuelle Zivilisationswirtschaft.">
+  <title>ASTRALIS Ω — Worlds Beyond</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#"><span class="brand-mark">Ω</span><span>ASTRALIS<span class="brand-light"> Ω</span><small>GALACTIC CIVILIZATION ENGINE</small></span></a>
+      <nav class="top-nav"><a class="active" href="#explore">Universum</a><a href="#worlds">Welten</a><a href="#economy">Wirtschaft</a><a href="#mission">Missionen</a></nav>
+      <div class="top-actions"><span class="live-dot"></span><span class="status-text">SYSTEM ONLINE</span><button class="wallet-pill" id="walletTop">◈ <b id="topCredits">2,500</b> AC</button><button class="avatar">AG</button></div>
+    </header>
+    <main>
+      <section class="hero-strip">
+        <div><div class="eyebrow">EXPLORE · BUILD · EVOLVE</div><h1>Dein Universum.<br><em>Deine Zivilisation.</em></h1><p>Entdecke reale Welten, erforsche neue Horizonte und entwickle deine eigene interplanetare Zukunft.</p><div class="hero-stats"><span><b id="worldCount">8</b><small>STARTWELTEN</small></span><span><b>NASA / JPL</b><small>DATENBASIS</small></span><span><b>LIVE 3D</b><small>ORBITAL VIEW</small></span></div></div>
+        <div class="hero-orbit"><div class="orbit orbit-a"></div><div class="orbit orbit-b"></div><div class="hero-planet"></div><span class="orbit-label label-a">SOL SYSTEM</span><span class="orbit-label label-b">EXOPLANETS</span></div>
+      </section>
+      <section class="workspace" id="explore">
+        <aside class="left-panel panel">
+          <div class="panel-head"><div><div class="eyebrow">STAR ATLAS</div><h2>Welten entdecken</h2></div><span class="count-chip" id="catalogCount">08</span></div>
+          <label class="searchbox"><span>⌕</span><input id="searchWorlds" placeholder="Planet oder Stern suchen …"></label>
+          <div class="filter-row"><button class="filter active" data-filter="all">Alle</button><button class="filter" data-filter="solar">Sonnensystem</button><button class="filter" data-filter="exo">Exoplaneten</button></div>
+          <div class="world-list" id="worldList"></div>
+          <button class="outline-button full" id="loadExoplanets">＋ NASA-Exoplaneten laden</button>
+          <p class="tiny-note">Katalogdaten werden mit Quelle und Abrufstatus angezeigt. Nicht verfügbare Messwerte werden nicht geschätzt.</p>
+        </aside>
+        <section class="universe-view panel">
+          <div class="view-top"><div><div class="eyebrow">INTERACTIVE COSMOS</div><h2 id="sceneTitle">Sol — unser Heimatsystem</h2><p id="sceneSubtitle">Wähle eine Welt und zoome in ihre Umlaufbahn.</p></div><div class="view-tools"><button id="resetCamera" title="Ansicht zurücksetzen">↺</button><button id="zoomOut" title="Herauszoomen">−</button><button id="zoomIn" title="Hineinzoomen">＋</button></div></div>
+          <div id="spaceCanvas" class="space-canvas"><div class="canvas-vignette"></div><div class="coordinate">ASTRALIS / CELESTIAL NAVIGATION</div><div class="scale-indicator" id="scaleIndicator">SYSTEM VIEW · 1 AU</div><div class="canvas-help">DRAG · ROTATE &nbsp; SCROLL · ZOOM</div><div class="loading-state" id="loadingState"><span class="loader"></span> Sternenkarte wird initialisiert …</div></div>
+          <div class="view-footer"><span><i class="legend-dot blue"></i> Stern / Planet</span><span><i class="legend-dot gold"></i> Ausgewählte Welt</span><span id="dataStatus">Daten: lokaler Katalog</span><span class="footer-right">3D ENGINE · WEBGL</span></div>
+        </section>
+        <aside class="right-panel panel" id="worlds">
+          <div class="panel-head"><div><div class="eyebrow">WORLD INTEL</div><h2>Weltprofil</h2></div><span class="verified">● DATA</span></div>
+          <div class="planet-art" id="planetArt"><div class="planet-glow"></div><div class="planet-ball" id="planetBall"></div><span class="art-tag" id="artTag">SOL / 03</span></div>
+          <div class="world-heading"><div><h3 id="selectedName">Erde</h3><p id="selectedHost">Sol System · Milchstraße</p></div><span class="world-type" id="selectedType">TERRESTRISCH</span></div>
+          <div class="world-description" id="selectedDescription">Unser Heimatplanet. Eine dynamische Welt mit Ozeanen, Atmosphäre und vielfältigen Ökosystemen.</div>
+          <div class="metrics-grid" id="metricsGrid"><div><small>RADIUS</small><b>1.00 R⊕</b></div><div><small>ORBIT</small><b>365.25 d</b></div><div><small>DISCOVERY</small><b>Antike</b></div><div><small>DATA CLASS</small><b>MESSDATEN</b></div></div>
+          <div class="data-source" id="sourceLine">Quelle: NASA / JPL · Sonnensystem-Katalog</div>
+          <div class="divider"></div>
+          <div class="allocation-head"><div><div class="eyebrow">CIVILIZATION FUND</div><h3>In diese Welt investieren</h3></div><span class="ac-badge">◈ AC</span></div>
+          <p class="allocation-copy">Setze virtuelle Credits für Forschung, Terraforming und den Ausbau deiner Spielwelt ein.</p>
+          <div class="allocation-options"><button data-amount="50">50 AC</button><button data-amount="250" class="chosen">250 AC</button><button data-amount="1000">1.000 AC</button></div>
+          <button class="primary-button full" id="investButton">◈ 250 AC zuweisen</button>
+          <div class="progress-block"><div><span>Weltentwicklung</span><b id="worldProgressText">12%</b></div><div class="progress-track"><span id="worldProgress" style="width:12%"></span></div></div>
+          <p class="tiny-note">AC sind ausschließlich virtuelle Spiel-Credits. Keine Geldanlage, kein Eigentum an Himmelskörpern und keine Rendite- oder Auszahlungszusage.</p>
+        </aside>
+      </section>
+      <section class="lower-grid" id="economy">
+        <article class="panel economy-panel"><div class="panel-head"><div><div class="eyebrow">YOUR CIVILIZATION</div><h2>Deine Weltenwirtschaft</h2></div><span class="status-chip">SIMULATION</span></div><div class="economy-cards"><div class="economy-card balance"><small>VERFÜGBARE CREDITS</small><strong id="balance">2,500 <i>AC</i></strong><span>Virtuelles Startguthaben</span></div><div class="economy-card"><small>INVESTIERT</small><strong id="invested">0 <i>AC</i></strong><span>In Weltprojekte zugewiesen</span></div><div class="economy-card"><small>AKTIVE WELTEN</small><strong id="activeWorlds">0</strong><span>Mit Entwicklungspunkten</span></div><div class="economy-card"><small>FORSCHUNGSSTUFE</small><strong id="researchLevel">01</strong><span>Foundations</span></div></div><div class="transaction-head"><h3>Letzte Zuweisungen</h3><span>LOKALE DEMO-DATEN</span></div><div id="transactions" class="transactions"><div class="empty-state">Noch keine Credits zugewiesen. Wähle eine Welt in der Sternenkarte.</div></div></article>
+        <article class="panel mission-panel" id="mission"><div class="eyebrow">NEXT FRONTIER</div><h2>Baue eine neue Welt.</h2><p>Jede Zuweisung unterstützt den virtuellen Ausbau einer Zivilisation. Erforsche Technologien, entwickle Habitate und erschließe neue Systeme.</p><div class="mission-steps"><div class="mission-step done"><span>01</span><div><b>Erste Welt auswählen</b><small>Wähle ein Ziel im Sternenatlas</small></div><i>✓</i></div><div class="mission-step"><span>02</span><div><b>Forschung finanzieren</b><small>Weise deine ersten Credits zu</small></div><i>◇</i></div><div class="mission-step"><span>03</span><div><b>Terraforming freischalten</b><small>Erreiche 1.000 Entwicklungspunkte</small></div><i>◇</i></div></div><button class="outline-button full" id="missionExplore">WELTEN ERKUNDEN ↗</button></article>
+      </section>
+      <footer><span>ASTRALIS Ω <small>GALACTIC CIVILIZATION ENGINE</small></span><span>Wissenschaftliche Referenzdaten · Virtuelle Simulation · Kein reales Eigentums- oder Anlageangebot</span><span>© 2026 ASTRALIS</span></footer>
+    </main>
+  </div>
+  <div class="toast" id="toast"></div>
+  <script type="module" src="./app.js"></script>
+</body>
+</html>
