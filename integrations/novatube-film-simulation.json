@@ -1,0 +1,38 @@
+{
+  "id": "novatube-film-simulation-ai",
+  "name": "NovaTube Film-Simulation KI",
+  "source_url": "https://novatube-a10l.onrender.com/?view=film",
+  "source_repository": "https://github.com/gaussa72-boop/Novatube",
+  "project_schema": "novatube.film-project.v1",
+  "capabilities": [
+    "film-story-planning",
+    "scene-structure",
+    "character-profiles",
+    "visual-style-briefs",
+    "camera-and-sound-briefs",
+    "scene-transitions",
+    "game-engine-export"
+  ],
+  "game_engine_target": {
+    "name": "Quantum Mirror Wonderland / Dark Mirror KI Game Mod",
+    "url": "https://quantum-mirror-wonderland-vibh.onrender.com/dark_mirror_game/ki-game-mod.html",
+    "transfer": "JSON file export/import",
+    "imported_as": "local structured game-design draft"
+  },
+  "collections": [
+    "Omega Aurealis",
+    "ULTIMA Central",
+    "shared AI project registry"
+  ],
+  "excluded_from_network": [
+    "Lyca",
+    "Webshop Parfum",
+    "Sneaker",
+    "Bullrun Apparel",
+    "Drop-shipping",
+    "Rothshild"
+  ],
+  "commerce_integration": false,
+  "payment_collection_enabled": false,
+  "status": "registered-navigation-and-file-exchange"
+}
